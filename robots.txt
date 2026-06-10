@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://animatestock.com/sitemap-index.xml
