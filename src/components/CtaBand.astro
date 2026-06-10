@@ -1,0 +1,22 @@
+---
+export interface Props {
+  heading?: string;
+  text?: string;
+}
+
+const {
+  heading = 'Ready to animate the market?',
+  text = 'Download Animate Stock for iPhone and turn any ticker into a share-ready video or GIF in minutes.',
+} = Astro.props;
+
+// TODO: replace with the real App Store link once the app is live
+const APP_STORE_URL = 'https://apps.apple.com/app/animate-stock/id0000000000';
+---
+
+<div class="cta-band">
+  <div class="container">
+    <h2>{heading}</h2>
+    <p>{text}</p>
+    <a href={APP_STORE_URL} class="btn btn-primary">Download on the App Store</a>
+  </div>
+</div>

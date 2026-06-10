@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+import GifSlot from '../components/GifSlot.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const faqs = [
+  {
+    q: 'What is a market cap animation?',
+    a: 'A market cap animation is a video that shows how a company’s total market value changed over time — for example Apple growing from a few billion dollars to over three trillion. Animate Stock renders this growth as a smooth animated chart you can export and share.',
+  },
+  {
+    q: 'How is market cap different from stock price?',
+    a: 'Stock price is the cost of a single share, while market cap is the total value of all shares combined. Market cap animations are great for showing company scale and growth, since they aren’t distorted by stock splits the way raw share prices are.',
+  },
+  {
+    q: 'Can I animate the market cap of any company?',
+    a: 'You can animate any publicly traded company with available historical data — from mega caps like Apple and Microsoft to small caps, plus major cryptocurrencies like Bitcoin.',
+  },
+  {
+    q: 'Can I compare the market caps of two companies?',
+    a: 'Yes. Add multiple tickers to a single project and the animation races their market caps against each other on one chart — perfect for moments where one company overtakes another.',
+  },
+  {
+    q: 'What formats can I export?',
+    a: 'High-quality MP4 video (landscape 1440x1080 or square 1080x1080, 30 fps) or an infinitely looping GIF, all watermark-free.',
+  },
+];
+---
+
+<Base
+  title="Market Cap Animation — Animated Company Growth Videos | Animate Stock"
+  description="Create animated market cap videos on your iPhone. Watch companies grow from millions to trillions and export the animation as a watermark-free MP4 or GIF."
+  path="/market-cap-animation"
+>
+  <div class="hero">
+    <div class="container">
+      <span class="eyebrow">Market cap animation</span>
+      <h1>Watch companies grow from millions to <span class="accent">trillions</span></h1>
+      <p class="subtitle">
+        Animate the market cap evolution of any public company. Nothing communicates
+        scale like watching a valuation explode in real time.
+      </p>
+      <div class="cta-row">
+        <a href="https://apps.apple.com/app/animate-stock/id0000000000" class="btn btn-primary">Download on the App Store</a>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <!-- GIF SLOT: market cap animation — e.g. AAPL market cap 2007→today crossing $1T, $2T, $3T -->
+      <GifSlot
+        label="Market cap demo GIF — a company's valuation growing over time (e.g. Apple crossing $1T, $2T, $3T)"
+        caption="Apple's march to a $3 trillion market cap, animated in Animate Stock."
+      />
+    </div>
+  </section>
+
+  <section class="center">
+    <div class="container">
+      <h2>Why market cap tells a better story</h2>
+      <div class="grid grid-3" style="margin-top: 36px; text-align: left;">
+        <div class="card">
+          <span class="card-icon">📏</span>
+          <h3>True scale</h3>
+          <p>Share prices are distorted by splits. Market cap shows what a company is actually worth — and how that changed.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🏁</span>
+          <h3>Milestone moments</h3>
+          <p>Mark the dates a company crossed $100B, $1T, or overtook a rival. Event markers make milestones pop.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🎥</span>
+          <h3>Made for video</h3>
+          <p>Smooth animated growth curves are mesmerizing content — ideal for explainers, shorts, and finance threads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="center">
+    <div class="container">
+      <h2>From valuation data to video</h2>
+      <div class="steps" style="margin-top: 36px; text-align: left;">
+        <div class="step">
+          <h3>Pick a company</h3>
+          <p>Search any listed company. The app fetches its full available market history.</p>
+        </div>
+        <div class="step">
+          <h3>Frame the story</h3>
+          <p>Choose the era you want to show — the early years, a turnaround, or the full journey to a trillion.</p>
+        </div>
+        <div class="step">
+          <h3>Export &amp; post</h3>
+          <p>Render an MP4 or GIF and share the growth story everywhere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} heading="Market cap animation FAQ" />
+
+  <CtaBand
+    heading="Animate a trillion-dollar story"
+    text="Download Animate Stock and turn company growth into content people stop scrolling for."
+  />
+</Base>

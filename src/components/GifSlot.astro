@@ -1,0 +1,39 @@
+---
+/**
+ * Placeholder slot for an app-generated GIF.
+ *
+ * To fill a slot later: export a GIF from the Animate Stock app, drop it in
+ * /public/gifs/, then pass `src="/gifs/<name>.gif"` to this component.
+ * Until then it renders a styled dashed placeholder with the same aspect ratio.
+ */
+export interface Props {
+  /** Path to the GIF once available, e.g. "/gifs/aapl-10-years.gif" */
+  src?: string;
+  /** Describes what GIF belongs here (shown in the placeholder + used as alt text) */
+  label: string;
+  /** "landscape" = 4:3 (1440x1080 export), "square" = 1:1 (1080x1080 export) */
+  ratio?: 'landscape' | 'square';
+  /** Optional caption shown under the slot */
+  caption?: string;
+}
+
+import { withBase } from '../lib/url';
+
+const { src: rawSrc, label, ratio = 'landscape', caption } = Astro.props;
+const src = rawSrc ? withBase(rawSrc) : undefined;
+const aspect = ratio === 'square' ? '1 / 1' : '4 / 3';
+---
+
+<figure class="gif-slot-wrap" style="margin: 0;">
+  {src ? (
+    <div class="gif-slot" style={`aspect-ratio: ${aspect};`}>
+      <img src={src} alt={label} loading="lazy" />
+    </div>
+  ) : (
+    <div class="gif-slot is-empty" style={`aspect-ratio: ${aspect};`} role="img" aria-label={label}>
+      <span class="gif-slot-icon">📈</span>
+      <span class="gif-slot-label">{label}</span>
+    </div>
+  )}
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

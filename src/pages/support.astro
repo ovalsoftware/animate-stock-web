@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import { withBase } from '../lib/url';
+---
+
+<Base
+  title="Support — Animate Stock"
+  description="Get help with the Animate Stock iPhone app. Contact support, report a bug, or request a feature."
+  path="/support"
+>
+  <article class="prose">
+    <h1>Support</h1>
+    <p>
+      Need help with Animate Stock, found a bug, or have a feature idea?
+      We'd love to hear from you.
+    </p>
+    <h2>Contact</h2>
+    <p>
+      Email us at <a href="mailto:apps@applorium.com">apps@applorium.com</a> and
+      we'll get back to you as soon as we can. Including your iOS version and a
+      screenshot or screen recording helps us help you faster.
+    </p>
+    <h2>Common questions</h2>
+    <p>
+      Quick answers about features and exports live on the feature pages:
+    </p>
+    <ul>
+      <li><a href={withBase('/stock-price-animation')}>Stock price animations</a></li>
+      <li><a href={withBase('/market-cap-animation')}>Market cap animations</a></li>
+      <li><a href={withBase('/compare-stocks')}>Comparing stocks</a></li>
+      <li><a href={withBase('/what-if-i-invested')}>What-if investment scenarios</a></li>
+      <li><a href={withBase('/stock-chart-gif-maker')}>GIF exports</a></li>
+    </ul>
+    <h2>Disclaimer</h2>
+    <p>
+      Animate Stock visualizes historical market data for informational and
+      entertainment purposes. It is not financial or investment advice.
+    </p>
+  </article>
+</Base>

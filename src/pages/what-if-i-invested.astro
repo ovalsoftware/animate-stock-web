@@ -1,0 +1,110 @@
+---
+import Base from '../layouts/Base.astro';
+import GifSlot from '../components/GifSlot.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const faqs = [
+  {
+    q: 'How does the “what if I invested” feature work?',
+    a: 'Pick a stock, a starting amount (like $100 or $1,000), and a purchase date in the past. Animate Stock then animates how the value of that investment evolved month by month all the way to today — including every crash and rally along the way.',
+  },
+  {
+    q: 'What if I bought $100 of Nokia in 2008?',
+    a: 'That’s exactly the kind of scenario the app is built for. Set the ticker to NOK, the amount to $100, and the date to 2008 — then watch the animation show what that investment would be worth at every point since, for better or worse.',
+  },
+  {
+    q: 'Can I run scenarios on crypto or ETFs?',
+    a: 'Yes. What-if scenarios work on anything with historical price data: individual stocks, ETFs like SPY or QQQ, indices, and major cryptocurrencies like Bitcoin.',
+  },
+  {
+    q: 'How accurate are the results?',
+    a: 'Calculations use adjusted historical closing prices, which account for stock splits. Results are illustrative — they don’t include dividends reinvestment timing, fees, or taxes — and are not investment advice.',
+  },
+  {
+    q: 'Can I share the result as a video?',
+    a: 'Yes — that’s the point! Export the scenario as a watermark-free MP4 or looping GIF, perfect for “what if” posts that get people talking.',
+  },
+];
+
+const scenarios = [
+  { text: '$100 of Nokia in 2008', flavor: 'The cautionary tale' },
+  { text: '$1,000 of Apple in 2003', flavor: 'The one that got away' },
+  { text: '$500 of Bitcoin in 2013', flavor: 'The moonshot' },
+  { text: '$100 of Amazon at IPO', flavor: 'The legend' },
+  { text: '$1,000 of GameStop in 2020', flavor: 'The rollercoaster' },
+  { text: '$200 of Tesla in 2012', flavor: 'The believer’s bet' },
+];
+---
+
+<Base
+  title="What If I Invested Calculator — Animated Investment Scenarios | Animate Stock"
+  description="What if you bought $100 of Nokia in 2008, or $1,000 of Apple in 2003? Animate what any past investment would be worth today and share it as a video or GIF."
+  path="/what-if-i-invested"
+>
+  <div class="hero">
+    <div class="container">
+      <span class="eyebrow">What-if scenarios</span>
+      <h1>“What if I bought <span class="accent">$100 of Nokia</span> in 2008?”</h1>
+      <p class="subtitle">
+        Turn hindsight into a story. Animate what any past investment would be
+        worth today — the triumphs, the heartbreaks, and everything in between.
+      </p>
+      <div class="cta-row">
+        <a href="https://apps.apple.com/app/animate-stock/id0000000000" class="btn btn-primary">Download on the App Store</a>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <!-- GIF SLOT: what-if animation — e.g. "$100 of NOK in 2008" with running dollar value counter -->
+      <GifSlot
+        label="What-if demo GIF — an investment's value evolving over time with a running dollar counter (e.g. $100 of Nokia in 2008)"
+        caption="A what-if scenario animated in Animate Stock."
+      />
+    </div>
+  </section>
+
+  <section class="center">
+    <div class="container">
+      <h2>Scenarios that write themselves</h2>
+      <p class="section-intro">Every investor has a “what if” story. Now you can show it instead of telling it.</p>
+      <div class="grid grid-3" style="text-align: left;">
+        {scenarios.map((s) => (
+          <div class="card">
+            <h3>{s.text}</h3>
+            <p>{s.flavor}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="center">
+    <div class="container">
+      <h2>How it works</h2>
+      <div class="steps" style="margin-top: 36px; text-align: left;">
+        <div class="step">
+          <h3>Set the scenario</h3>
+          <p>Choose a ticker, an investment amount, and a purchase date anywhere in the available history.</p>
+        </div>
+        <div class="step">
+          <h3>Watch it play out</h3>
+          <p>The animation tracks your hypothetical investment month by month, through every rally and crash.</p>
+        </div>
+        <div class="step">
+          <h3>Share the ending</h3>
+          <p>Export the full story as an MP4 or GIF — the final number is the punchline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} heading="What-if investment FAQ" />
+
+  <CtaBand
+    heading="What's your what-if?"
+    text="Download Animate Stock and find out — then make it a video everyone wants to watch."
+  />
+</Base>

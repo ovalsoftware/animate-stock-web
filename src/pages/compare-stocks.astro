@@ -1,0 +1,113 @@
+---
+import Base from '../layouts/Base.astro';
+import GifSlot from '../components/GifSlot.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const faqs = [
+  {
+    q: 'How do I compare two stocks on one animated chart?',
+    a: 'In Animate Stock, create a project and add two (or more) tickers. The app automatically finds the date range where their histories overlap and animates both lines on a single chart, each with its own color.',
+  },
+  {
+    q: 'How many stocks can I compare at once?',
+    a: 'You can add many tickers to one chart — comparisons with 8 or more lines work smoothly. Each line gets a distinct color you can customize.',
+  },
+  {
+    q: 'Can I compare a stock against an index or crypto?',
+    a: 'Yes. You can mix asset types freely — for example Tesla vs the S&P 500, or Nvidia vs Bitcoin. Anything with historical price data can go on the same chart.',
+  },
+  {
+    q: 'What happens if the stocks have different listing dates?',
+    a: 'The app detects the overlapping period automatically and validates it before creating the project, so the comparison is always apples-to-apples over a shared timeframe.',
+  },
+  {
+    q: 'Can I export the comparison as a GIF?',
+    a: 'Yes — export as a looping GIF for feeds and threads, or as a high-quality MP4 for YouTube and TikTok. Both are watermark-free.',
+  },
+];
+
+const matchups = [
+  { a: 'Tesla', b: 'Ford', note: 'New school vs old school auto' },
+  { a: 'Nvidia', b: 'Intel', note: 'The AI era changing of the guard' },
+  { a: 'Apple', b: 'Microsoft', note: 'The trillion-dollar rivalry' },
+  { a: 'Netflix', b: 'Disney', note: 'The streaming wars' },
+  { a: 'Coca-Cola', b: 'PepsiCo', note: 'A century-old duel' },
+  { a: 'Bitcoin', b: 'S&P 500', note: 'Crypto vs the market' },
+];
+---
+
+<Base
+  title="Compare Stocks Side by Side — Animated Stock Comparison Videos | Animate Stock"
+  description="Compare two or more stocks on one animated chart. Race Tesla vs Ford or Nvidia vs Intel over any time range and export the comparison as MP4 or GIF."
+  path="/compare-stocks"
+>
+  <div class="hero">
+    <div class="container">
+      <span class="eyebrow">Stock comparison</span>
+      <h1>Race stocks against each other, <span class="accent">animated</span></h1>
+      <p class="subtitle">
+        Put two — or eight — tickers on one chart and watch them battle it out
+        over any time range. The most satisfying way to settle a stock debate.
+      </p>
+      <div class="cta-row">
+        <a href="https://apps.apple.com/app/animate-stock/id0000000000" class="btn btn-primary">Download on the App Store</a>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <!-- GIF SLOT: comparison animation — e.g. TSLA vs F since 2010, two colored lines diverging -->
+      <GifSlot
+        label="Comparison demo GIF — two stocks racing on one chart (e.g. Tesla vs Ford since 2010)"
+        caption="Tesla vs Ford since 2010 — created with Animate Stock."
+      />
+    </div>
+  </section>
+
+  <section class="center">
+    <div class="container">
+      <h2>Matchups people love to watch</h2>
+      <p class="section-intro">Any tickers, any era. Here are a few classics to get you started.</p>
+      <div class="grid grid-3" style="text-align: left;">
+        {matchups.map((m) => (
+          <div class="card">
+            <h3>{m.a} <span class="accent">vs</span> {m.b}</h3>
+            <p>{m.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="center">
+    <div class="container">
+      <h2>Built for fair fights</h2>
+      <div class="grid grid-3" style="margin-top: 36px; text-align: left;">
+        <div class="card">
+          <span class="card-icon">🔍</span>
+          <h3>Auto-aligned timelines</h3>
+          <p>The app finds the overlapping history between all tickers so every comparison starts on equal footing.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🎨</span>
+          <h3>A color per contender</h3>
+          <p>Each line gets a distinct, customizable color so viewers can follow the race at a glance.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🌐</span>
+          <h3>Mix asset types</h3>
+          <p>Stocks vs ETFs vs indices vs crypto — anything with price history can join the chart.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} heading="Stock comparison FAQ" />
+
+  <CtaBand
+    heading="Start a matchup"
+    text="Download Animate Stock and put your favorite rivalry on one animated chart."
+  />
+</Base>

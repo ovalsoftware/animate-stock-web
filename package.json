@@ -1,0 +1,19 @@
+{
+  "name": "animate-stock-web",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "SITE=https://ovalsoftware.github.io BASE_PATH=/animate-stock-web astro build && gh-pages -d dist -t"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.4.0",
+    "astro": "^5.8.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}

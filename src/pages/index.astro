@@ -1,0 +1,173 @@
+---
+import Base from '../layouts/Base.astro';
+import GifSlot from '../components/GifSlot.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { withBase } from '../lib/url';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Animate Stock',
+  operatingSystem: 'iOS',
+  applicationCategory: 'FinanceApplication',
+  description:
+    'Create animated stock chart videos and GIFs on your iPhone. Animate stock prices, market caps, compare tickers, and visualize what-if investment scenarios.',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  author: { '@type': 'Organization', name: 'Applorium' },
+  url: 'https://animatestock.com',
+};
+
+const faqs = [
+  {
+    q: 'What is Animate Stock?',
+    a: 'Animate Stock is an iPhone app that turns historical stock market data into animated chart videos and GIFs. Pick a ticker and a time range, customize the look, and export a share-ready MP4 or GIF in minutes.',
+  },
+  {
+    q: 'Which stocks and assets are supported?',
+    a: 'Anything with public market data: US and international stocks, ETFs, indices, and major cryptocurrencies. If a ticker has historical price data, you can animate it.',
+  },
+  {
+    q: 'What export formats are available?',
+    a: 'You can export high-quality MP4 video (1440x1080 landscape or 1080x1080 square, 30 fps) or an animated GIF that loops forever — perfect for X, Reddit, TikTok, YouTube, and newsletters.',
+  },
+  {
+    q: 'Do my videos have a watermark?',
+    a: 'No. Every video and GIF you export is clean and watermark-free, with full control over colors, title, duration, and aspect ratio.',
+  },
+  {
+    q: 'How far back does the historical data go?',
+    a: 'As far back as data exists for each ticker — for many large-cap stocks that means 20+ years of price history. The app shows you the available date range for every ticker you add.',
+  },
+];
+---
+
+<Base
+  title="Animate Stock — Turn Stock Charts into Animated Videos & GIFs"
+  description="Create stunning animated stock chart videos on your iPhone. Animate price history, market cap growth, compare stocks, and visualize what-if investment scenarios. Export as MP4 or GIF."
+  path="/"
+>
+  <div class="hero">
+    <div class="container">
+      <span class="eyebrow">iPhone app for finance creators</span>
+      <h1>Turn stock market history into <span class="accent">animated videos</span></h1>
+      <p class="subtitle">
+        Pick any ticker, choose a time range, and watch the chart come alive.
+        Export watermark-free MP4s and GIFs built for social media.
+      </p>
+      <div class="cta-row">
+        <a href="https://apps.apple.com/app/animate-stock/id0000000000" class="btn btn-primary">Download on the App Store</a>
+        <a href="#features" class="btn btn-secondary">See what it makes</a>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <!-- GIF SLOT: hero demo — e.g. AAPL 2004→today price animation, dark theme, landscape -->
+      <GifSlot
+        label="Hero demo GIF — animate a famous stock's full price history here (e.g. Apple 2004 → today)"
+        caption="An animated chart created with Animate Stock — every frame rendered on-device."
+      />
+    </div>
+  </section>
+
+  <section id="features" class="center">
+    <div class="container">
+      <h2>Four ways to bring the market to life</h2>
+      <p class="section-intro">
+        Each one takes under a minute to set up and exports as video or GIF.
+      </p>
+      <div class="grid grid-2" style="text-align: left;">
+        <a class="card" href={withBase('/stock-price-animation')}>
+          <span class="card-icon">📈</span>
+          <h3>Stock Price Animation</h3>
+          <p>
+            Animate any stock's price evolution over days, years, or decades.
+            Add event markers for earnings, crashes, and product launches.
+          </p>
+          <span class="card-link">Make a price animation →</span>
+        </a>
+        <a class="card" href={withBase('/market-cap-animation')}>
+          <span class="card-icon">🏦</span>
+          <h3>Market Cap Animation</h3>
+          <p>
+            Watch a company grow from millions to trillions. Market cap
+            evolution videos that make scale instantly understandable.
+          </p>
+          <span class="card-link">Animate market cap →</span>
+        </a>
+        <a class="card" href={withBase('/compare-stocks')}>
+          <span class="card-icon">⚔️</span>
+          <h3>Compare Stocks</h3>
+          <p>
+            Tesla vs Ford. Nvidia vs Intel. Race multiple tickers on one
+            animated chart and settle the debate with data.
+          </p>
+          <span class="card-link">Compare stocks →</span>
+        </a>
+        <a class="card" href={withBase('/what-if-i-invested')}>
+          <span class="card-icon">💸</span>
+          <h3>What If I Invested…</h3>
+          <p>
+            “What if I bought $100 of Nokia in 2008?” Turn hindsight into a
+            dramatic animated story of what your money would be worth.
+          </p>
+          <span class="card-link">Run a what-if scenario →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="center">
+    <div class="container">
+      <h2>From ticker to video in three steps</h2>
+      <div class="steps" style="margin-top: 36px; text-align: left;">
+        <div class="step">
+          <h3>Search any ticker</h3>
+          <p>Stocks, ETFs, indices, and crypto. The app shows the full available history for each one.</p>
+        </div>
+        <div class="step">
+          <h3>Customize the chart</h3>
+          <p>Pick a date range, colors, theme, title, animation duration, and add event markers to key dates.</p>
+        </div>
+        <div class="step">
+          <h3>Export &amp; share</h3>
+          <p>Render a watermark-free MP4 or looping GIF and save it straight to your photo library.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="center">
+    <div class="container">
+      <h2>Built for sharing</h2>
+      <p class="section-intro">
+        Landscape for YouTube, square for feeds. High-bitrate video or lightweight looping GIFs.
+      </p>
+      <div class="grid grid-3" style="text-align: left;">
+        <div class="card">
+          <span class="card-icon">🎬</span>
+          <h3>Crisp MP4 export</h3>
+          <p>H.264 at 9 Mbps and 30 fps — sharp enough for full-screen playback.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🔁</span>
+          <h3>Looping GIFs</h3>
+          <p>Infinite-loop GIFs that auto-play everywhere: X, Reddit, Discord, newsletters.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🎨</span>
+          <h3>Your style</h3>
+          <p>Custom background colors, light or dark themes, per-line colors, and custom titles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} />
+
+  <CtaBand />
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</Base>

@@ -1,0 +1,111 @@
+---
+import '../styles/global.css';
+import { withBase } from '../lib/url';
+
+export interface Props {
+  title: string;
+  description: string;
+  /** Path of the current page, e.g. "/compare-stocks" — used for canonical + nav highlight */
+  path?: string;
+}
+
+const { title, description, path = '/' } = Astro.props;
+const canonical = new URL(withBase(path), Astro.site);
+
+// TODO: replace with the real App Store link once the app is live,
+// e.g. https://apps.apple.com/app/id0000000000
+const APP_STORE_URL = 'https://apps.apple.com/app/animate-stock/id0000000000';
+
+const navLinks = [
+  { href: '/stock-price-animation', label: 'Price Animation' },
+  { href: '/market-cap-animation', label: 'Market Cap' },
+  { href: '/compare-stocks', label: 'Compare Stocks' },
+  { href: '/what-if-i-invested', label: 'What If Calculator' },
+  { href: '/stock-chart-gif-maker', label: 'GIF Maker' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+    <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
+    <meta name="theme-color" content="#0a0e14" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Animate Stock" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(withBase('/og-image.png'), Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href={withBase('/')} class="logo" aria-label="Animate Stock home">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="26" height="26" rx="6" fill="#0099FF" fill-opacity="0.15" />
+            <path d="M4 18.5L9.5 12.5L13.5 15.5L22 6.5" stroke="#0099FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="22" cy="6.5" r="2" fill="#0099FF" />
+          </svg>
+          Animate Stock
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          {navLinks.map((link) => (
+            <a href={withBase(link.href)} class={path === link.href ? 'active' : undefined}>{link.label}</a>
+          ))}
+          <a href={APP_STORE_URL} class="btn btn-primary btn-sm">Download</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h4>Animate Stock</h4>
+            <p>
+              Turn stock market history into beautiful animated videos and GIFs.
+              Made for creators, investors, and finance nerds.
+            </p>
+            <a href={APP_STORE_URL} class="btn btn-secondary btn-sm">Download on the App Store</a>
+          </div>
+          <div>
+            <h4>Features</h4>
+            <ul>
+              <li><a href={withBase('/stock-price-animation')}>Stock Price Animation</a></li>
+              <li><a href={withBase('/market-cap-animation')}>Market Cap Animation</a></li>
+              <li><a href={withBase('/compare-stocks')}>Compare Stocks</a></li>
+              <li><a href={withBase('/what-if-i-invested')}>What If I Invested</a></li>
+              <li><a href={withBase('/stock-chart-gif-maker')}>Stock Chart GIF Maker</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <ul>
+              <li><a href={withBase('/support')}>Support</a></li>
+              <li><a href={withBase('/privacy')}>Privacy Policy</a></li>
+              <li><a href="mailto:apps@applorium.com">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© {new Date().getFullYear()} Applorium. All rights reserved.</span>
+          <span>Market data provided by third-party sources. Not investment advice.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
