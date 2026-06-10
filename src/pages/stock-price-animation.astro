@@ -8,7 +8,7 @@ import Icon from '../components/Icon.astro';
 const faqs = [
   {
     q: 'How do I make an animated stock chart video?',
-    a: 'Open Animate Stock on your iPhone, search for a ticker, pick a date range, and tap export. The app renders a smooth animated line chart of the price history and saves it as an MP4 video or GIF — no editing skills or desktop software needed.',
+    a: 'Open Animate Stock on your iPhone, search for a ticker, pick a date range, and tap export. The app renders a smooth animated line chart of the price history as a share-ready video — no editing skills or desktop software needed.',
   },
   {
     q: 'Can I animate any time period?',
@@ -20,11 +20,11 @@ const faqs = [
   },
   {
     q: 'How long can the animation be?',
-    a: 'You choose the duration: presets from 5 to 90 seconds, or set a custom length. Short loops work great as GIFs; longer renders suit YouTube and TikTok narration.',
+    a: 'You choose the duration: presets from 5 to 90 seconds, or set a custom length. Short loops grab attention in feeds; longer renders suit YouTube and TikTok narration.',
   },
   {
     q: 'Can I customize how the chart looks?',
-    a: 'Yes. Every MP4 and GIF exports with your choice of background color, light or dark theme, line color, and chart title.',
+    a: 'Yes. Every export comes with your choice of background color, light or dark theme, line color, and chart title.',
   },
 ];
 
@@ -35,14 +35,14 @@ const jsonLd = {
   step: [
     { '@type': 'HowToStep', name: 'Search a ticker', text: 'Search for any stock, ETF, index, or crypto in the Animate Stock app.' },
     { '@type': 'HowToStep', name: 'Pick a date range', text: 'Choose any period from the available price history — months, years, or decades.' },
-    { '@type': 'HowToStep', name: 'Customize and export', text: 'Set colors, theme, duration, and event markers, then export as MP4 video or animated GIF.' },
+    { '@type': 'HowToStep', name: 'Customize and export', text: 'Set colors, theme, duration, and event markers, then export the animation as a video.' },
   ],
 };
 ---
 
 <Base
   title="Stock Price Animation Maker — Animated Stock Chart Videos | Animate Stock"
-  description="Make animated stock chart videos on your iPhone. Animate any stock's price history over months, years, or decades and export as an MP4 or GIF."
+  description="Make animated stock chart videos on your iPhone. Animate any stock's price history over months, years, or decades and export a share-ready video."
   path="/stock-price-animation"
 >
   <div class="hero">
@@ -83,7 +83,7 @@ const jsonLd = {
         </div>
         <div class="step">
           <h3>Export the video</h3>
-          <p>Render a 30 fps MP4 or a looping GIF — landscape for video platforms, square for social feeds.</p>
+          <p>Render in landscape for video platforms or square for social feeds.</p>
         </div>
       </div>
     </div>

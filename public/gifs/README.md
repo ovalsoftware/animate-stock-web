@@ -12,7 +12,6 @@ Slots waiting for a GIF (search for `GIF SLOT` in src/pages to find them):
 | `market-cap-animation.astro` | Market cap growth, e.g. AAPL crossing $1T/$2T/$3T | landscape (4:3) |
 | `compare-stocks.astro` | Two stocks racing, e.g. TSLA vs F since 2010 | landscape (4:3) |
 | `what-if-i-invested.astro` | "$100 of Nokia in 2008" scenario | landscape (4:3) |
-| `stock-chart-gif-maker.astro` | Short punchy loop, e.g. 5-second BTC | square (1:1) |
 
 Example edit in a page:
 

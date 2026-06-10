@@ -18,7 +18,6 @@ npm run preview  # serve the built site
 - `/market-cap-animation` — market cap evolution videos
 - `/compare-stocks` — multi-stock comparison animations
 - `/what-if-i-invested` — "what if I bought $100 of X in YYYY" scenarios
-- `/stock-chart-gif-maker` — looping GIF export
 - `/support`, `/privacy`
 
 ## Before launch
