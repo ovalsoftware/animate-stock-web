@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import GifSlot from '../components/GifSlot.astro';
 import Faq from '../components/Faq.astro';
 import CtaBand from '../components/CtaBand.astro';
+import Icon from '../components/Icon.astro';
 
 const faqs = [
   {
@@ -23,14 +24,14 @@ const faqs = [
   },
   {
     q: 'What formats can I export?',
-    a: 'High-quality MP4 video (landscape 1440x1080 or square 1080x1080, 30 fps) or an infinitely looping GIF, all watermark-free.',
+    a: 'High-quality MP4 video (landscape 1440x1080 or square 1080x1080, 30 fps) or an infinitely looping GIF.',
   },
 ];
 ---
 
 <Base
   title="Market Cap Animation — Animated Company Growth Videos | Animate Stock"
-  description="Create animated market cap videos on your iPhone. Watch companies grow from millions to trillions and export the animation as a watermark-free MP4 or GIF."
+  description="Create animated market cap videos on your iPhone. Watch companies grow from millions to trillions and export the animation as an MP4 or GIF."
   path="/market-cap-animation"
 >
   <div class="hero">
@@ -62,17 +63,17 @@ const faqs = [
       <h2>Why market cap tells a better story</h2>
       <div class="grid grid-3" style="margin-top: 36px; text-align: left;">
         <div class="card">
-          <span class="card-icon">📏</span>
+          <span class="card-icon"><Icon name="bars" /></span>
           <h3>True scale</h3>
           <p>Share prices are distorted by splits. Market cap shows what a company is actually worth — and how that changed.</p>
         </div>
         <div class="card">
-          <span class="card-icon">🏁</span>
+          <span class="card-icon"><Icon name="flag" /></span>
           <h3>Milestone moments</h3>
           <p>Mark the dates a company crossed $100B, $1T, or overtook a rival. Event markers make milestones pop.</p>
         </div>
         <div class="card">
-          <span class="card-icon">🎥</span>
+          <span class="card-icon"><Icon name="video" /></span>
           <h3>Made for video</h3>
           <p>Smooth animated growth curves are mesmerizing content — ideal for explainers, shorts, and finance threads.</p>
         </div>

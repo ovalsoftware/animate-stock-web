@@ -281,9 +281,15 @@ section .section-intro {
 }
 
 .card .card-icon {
-  font-size: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
   margin-bottom: 14px;
-  display: inline-block;
 }
 
 a.card {
@@ -426,8 +432,9 @@ a.card .card-link {
 }
 
 .gif-slot.is-empty .gif-slot-icon {
-  font-size: 2.2rem;
-  opacity: 0.6;
+  color: var(--text-muted);
+  opacity: 0.7;
+  display: inline-flex;
 }
 
 .gif-slot.is-empty .gif-slot-label {

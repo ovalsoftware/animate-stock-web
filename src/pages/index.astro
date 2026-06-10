@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import GifSlot from '../components/GifSlot.astro';
 import Faq from '../components/Faq.astro';
 import CtaBand from '../components/CtaBand.astro';
+import Icon from '../components/Icon.astro';
 import { withBase } from '../lib/url';
 
 const jsonLd = {
@@ -13,7 +14,6 @@ const jsonLd = {
   applicationCategory: 'FinanceApplication',
   description:
     'Create animated stock chart videos and GIFs on your iPhone. Animate stock prices, market caps, compare tickers, and visualize what-if investment scenarios.',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   author: { '@type': 'Organization', name: 'Applorium' },
   url: 'https://animatestock.com',
 };
@@ -32,8 +32,8 @@ const faqs = [
     a: 'You can export high-quality MP4 video (1440x1080 landscape or 1080x1080 square, 30 fps) or an animated GIF that loops forever — perfect for X, Reddit, TikTok, YouTube, and newsletters.',
   },
   {
-    q: 'Do my videos have a watermark?',
-    a: 'No. Every video and GIF you export is clean and watermark-free, with full control over colors, title, duration, and aspect ratio.',
+    q: 'Can I customize how the video looks?',
+    a: 'Yes. You have full control over colors, light or dark theme, chart title, animation duration, and aspect ratio.',
   },
   {
     q: 'How far back does the historical data go?',
@@ -53,7 +53,7 @@ const faqs = [
       <h1>Turn stock market history into <span class="accent">animated videos</span></h1>
       <p class="subtitle">
         Pick any ticker, choose a time range, and watch the chart come alive.
-        Export watermark-free MP4s and GIFs built for social media.
+        Export MP4s and GIFs built for social media.
       </p>
       <div class="cta-row">
         <a href="https://apps.apple.com/app/animate-stock/id0000000000" class="btn btn-primary">Download on the App Store</a>
@@ -80,7 +80,7 @@ const faqs = [
       </p>
       <div class="grid grid-2" style="text-align: left;">
         <a class="card" href={withBase('/stock-price-animation')}>
-          <span class="card-icon">📈</span>
+          <span class="card-icon"><Icon name="chart" /></span>
           <h3>Stock Price Animation</h3>
           <p>
             Animate any stock's price evolution over days, years, or decades.
@@ -89,7 +89,7 @@ const faqs = [
           <span class="card-link">Make a price animation →</span>
         </a>
         <a class="card" href={withBase('/market-cap-animation')}>
-          <span class="card-icon">🏦</span>
+          <span class="card-icon"><Icon name="landmark" /></span>
           <h3>Market Cap Animation</h3>
           <p>
             Watch a company grow from millions to trillions. Market cap
@@ -98,7 +98,7 @@ const faqs = [
           <span class="card-link">Animate market cap →</span>
         </a>
         <a class="card" href={withBase('/compare-stocks')}>
-          <span class="card-icon">⚔️</span>
+          <span class="card-icon"><Icon name="versus" /></span>
           <h3>Compare Stocks</h3>
           <p>
             Tesla vs Ford. Nvidia vs Intel. Race multiple tickers on one
@@ -107,7 +107,7 @@ const faqs = [
           <span class="card-link">Compare stocks →</span>
         </a>
         <a class="card" href={withBase('/what-if-i-invested')}>
-          <span class="card-icon">💸</span>
+          <span class="card-icon"><Icon name="dollar" /></span>
           <h3>What If I Invested…</h3>
           <p>
             “What if I bought $100 of Nokia in 2008?” Turn hindsight into a
@@ -133,7 +133,7 @@ const faqs = [
         </div>
         <div class="step">
           <h3>Export &amp; share</h3>
-          <p>Render a watermark-free MP4 or looping GIF and save it straight to your photo library.</p>
+          <p>Render an MP4 or looping GIF and save it straight to your photo library.</p>
         </div>
       </div>
     </div>
@@ -147,17 +147,17 @@ const faqs = [
       </p>
       <div class="grid grid-3" style="text-align: left;">
         <div class="card">
-          <span class="card-icon">🎬</span>
+          <span class="card-icon"><Icon name="film" /></span>
           <h3>Crisp MP4 export</h3>
           <p>H.264 at 9 Mbps and 30 fps — sharp enough for full-screen playback.</p>
         </div>
         <div class="card">
-          <span class="card-icon">🔁</span>
+          <span class="card-icon"><Icon name="loop" /></span>
           <h3>Looping GIFs</h3>
           <p>Infinite-loop GIFs that auto-play everywhere: X, Reddit, Discord, newsletters.</p>
         </div>
         <div class="card">
-          <span class="card-icon">🎨</span>
+          <span class="card-icon"><Icon name="sliders" /></span>
           <h3>Your style</h3>
           <p>Custom background colors, light or dark themes, per-line colors, and custom titles.</p>
         </div>

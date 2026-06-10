@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import GifSlot from '../components/GifSlot.astro';
 import Faq from '../components/Faq.astro';
 import CtaBand from '../components/CtaBand.astro';
+import Icon from '../components/Icon.astro';
 
 const faqs = [
   {
@@ -22,8 +23,8 @@ const faqs = [
     a: 'You choose the duration: presets from 5 to 90 seconds, or set a custom length. Short loops work great as GIFs; longer renders suit YouTube and TikTok narration.',
   },
   {
-    q: 'Is the exported video watermark-free?',
-    a: 'Yes. Every MP4 and GIF exports clean, with your choice of background color, light or dark theme, line color, and chart title.',
+    q: 'Can I customize how the chart looks?',
+    a: 'Yes. Every MP4 and GIF exports with your choice of background color, light or dark theme, line color, and chart title.',
   },
 ];
 
@@ -41,7 +42,7 @@ const jsonLd = {
 
 <Base
   title="Stock Price Animation Maker — Animated Stock Chart Videos | Animate Stock"
-  description="Make animated stock chart videos on your iPhone. Animate any stock's price history over months, years, or decades and export as a watermark-free MP4 or GIF."
+  description="Make animated stock chart videos on your iPhone. Animate any stock's price history over months, years, or decades and export as an MP4 or GIF."
   path="/stock-price-animation"
 >
   <div class="hero">
@@ -94,22 +95,22 @@ const jsonLd = {
       <p class="section-intro">Every detail of the animation is customizable.</p>
       <div class="grid grid-4" style="text-align: left;">
         <div class="card">
-          <span class="card-icon">📅</span>
+          <span class="card-icon"><Icon name="calendar" /></span>
           <h3>Any date range</h3>
           <p>From last quarter's run to a 25-year retrospective.</p>
         </div>
         <div class="card">
-          <span class="card-icon">📍</span>
+          <span class="card-icon"><Icon name="pin" /></span>
           <h3>Event markers</h3>
           <p>Pin launches, earnings, splits, and crashes to exact dates.</p>
         </div>
         <div class="card">
-          <span class="card-icon">⏱️</span>
+          <span class="card-icon"><Icon name="clock" /></span>
           <h3>Your pace</h3>
           <p>5-second loops to 90-second deep dives, or any custom length.</p>
         </div>
         <div class="card">
-          <span class="card-icon">🌗</span>
+          <span class="card-icon"><Icon name="moon" /></span>
           <h3>Light or dark</h3>
           <p>Pick a theme and any background color to match your brand.</p>
         </div>

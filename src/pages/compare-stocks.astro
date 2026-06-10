@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import GifSlot from '../components/GifSlot.astro';
 import Faq from '../components/Faq.astro';
 import CtaBand from '../components/CtaBand.astro';
+import Icon from '../components/Icon.astro';
 
 const faqs = [
   {
@@ -23,7 +24,7 @@ const faqs = [
   },
   {
     q: 'Can I export the comparison as a GIF?',
-    a: 'Yes — export as a looping GIF for feeds and threads, or as a high-quality MP4 for YouTube and TikTok. Both are watermark-free.',
+    a: 'Yes — export as a looping GIF for feeds and threads, or as a high-quality MP4 for YouTube and TikTok.',
   },
 ];
 
@@ -86,17 +87,17 @@ const matchups = [
       <h2>Built for fair fights</h2>
       <div class="grid grid-3" style="margin-top: 36px; text-align: left;">
         <div class="card">
-          <span class="card-icon">🔍</span>
+          <span class="card-icon"><Icon name="search" /></span>
           <h3>Auto-aligned timelines</h3>
           <p>The app finds the overlapping history between all tickers so every comparison starts on equal footing.</p>
         </div>
         <div class="card">
-          <span class="card-icon">🎨</span>
+          <span class="card-icon"><Icon name="sliders" /></span>
           <h3>A color per contender</h3>
           <p>Each line gets a distinct, customizable color so viewers can follow the race at a glance.</p>
         </div>
         <div class="card">
-          <span class="card-icon">🌐</span>
+          <span class="card-icon"><Icon name="globe" /></span>
           <h3>Mix asset types</h3>
           <p>Stocks vs ETFs vs indices vs crypto — anything with price history can join the chart.</p>
         </div>

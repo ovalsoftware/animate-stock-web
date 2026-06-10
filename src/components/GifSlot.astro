@@ -18,6 +18,7 @@ export interface Props {
 }
 
 import { withBase } from '../lib/url';
+import Icon from './Icon.astro';
 
 const { src: rawSrc, label, ratio = 'landscape', caption } = Astro.props;
 const src = rawSrc ? withBase(rawSrc) : undefined;
@@ -31,7 +32,7 @@ const aspect = ratio === 'square' ? '1 / 1' : '4 / 3';
     </div>
   ) : (
     <div class="gif-slot is-empty" style={`aspect-ratio: ${aspect};`} role="img" aria-label={label}>
-      <span class="gif-slot-icon">📈</span>
+      <span class="gif-slot-icon"><Icon name="chart" size={36} /></span>
       <span class="gif-slot-label">{label}</span>
     </div>
   )}
